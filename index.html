@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Portfolio Alejandro Diaz">
+    <title>Prueba</title>
+    <!-- ====================FAVICON======================= -->
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <!-- ====================REMIXICONS======================= -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body>
+
+    <div class="contedor__loader">
+        <div class="loader">
+
+        </div>
+    </div>
+    <!-- ====================HEADER======================= -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#home" class="nav__logo">
+                LOGO
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">Inicio</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#calculadora" class="nav__link">Calculadora</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#formulario" class="nav__link">Formulario</a>
+                    </li>
+                </ul>
+                <!-- CLOSE BUTTOM   -->
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+            <!-- Toggle button -->
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- /*=============== MAIN ===============*/ -->
+    <main class="main">
+        <!-- /*=============== home ===============*/ -->
+        <section class="home section" id="home">
+            <div class="home__container container ">
+                <div class="container-carrusel">
+                    <div class="carruseles" id="slider">
+                        <section class="slider-section">
+                            <img src="assets/img/img1.webp" alt="imagen carrusel 1">
+                        </section>
+
+                        <section class="slider-section">
+                            <img src="assets/img/img2.webp" alt="imagen carrusel 2">
+                        </section>
+
+                        <section class="slider-section">
+                            <img src="assets/img/img3.webp" alt="imagen carrusel 3">
+                        </section>
+                    </div>
+                    <div class="btn-left"><i class="ri-arrow-left-s-line"></i></i></div>
+                    <div class="btn-right"><i class="ri-arrow-right-s-line"></i></i></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- /*=============== CALCULADORA ===============*/ -->
+        <section class="calculadora section" id="calculadora">
+            <div class="contenedor-calculadora">
+                <div>
+                    <h1 class="title-calculadora">Calculadora de Movimiento Financiero</h1>
+                    <form  class="formulario">
+                        <div class="form-group">
+                            <label for="balance">Balance de la cuenta:</label>
+                            <input id="balance" required step="0.01" type="number" />
+                        </div>
+                        <div class="form-group">
+                            <label for="apalancamiento">Apalancamiento:</label>
+                            <input id="apalancamiento" readonly type="number" value="5" />
+                        </div>
+                        <div class="form-group">
+                            <label for="instrumento">Instrumento:</label>
+                            <input id="instrumento" readonly type="text" value="APPLE" />
+                        </div>
+                        <div class="form-group">
+                            <label for="valor-fecha1">Valor de la acción 12 de abril 2023:</label>
+                            <input id="valor-fecha1" readonly step="0.01" type="number" value="160" />
+                        </div>
+                        <div class="form-group">
+                            <label for="valor-fecha2">Valor de la acción 10 de mayo 2023:</label>
+                            <input id="valor-fecha2" readonly step="0.01" type="number" value="173" />
+                        </div>
+                        <button class="buttom" type="button" onclick="calcularPromedio()">Calcular Promedio de
+                            Acciones</button>
+                        <div class="form-group">
+                            <label for="acciones">Acciones:</label>
+                            <input id="acciones" readonly step="1" type="number" />
+                        </div>
+                        <div class="form-group">
+                            <label for="unidades">Unidades:</label>
+                            <input id="unidades" required step="1" type="number" />
+                        </div>
+                        <button class="buttom" type="button" onclick="calcularGanancia()">Calcular Ganancia
+                            Potencial</button>
+                    </form>
+                </div>
+                
+                <div id="resultado"></div>
+            </div>
+
+        </section>
+
+        <!-- /*=============== Registro ===============*/ -->
+        <section class=" registro-formulario section" id="formulario">
+            <form action="#" class="registro">
+                <h1 class="title-registro">Registrate</h1>
+                <div class="container-2">
+                    
+                        <div class="container-inputs">
+                            <i class="ri-user-fill icon" ></i>
+                            <input type="text" name="name" id="nombre" placeholder="Ingresa tu nombre" required>
+                        </div>
+                        <div class="container-inputs">
+                            <i class="ri-phone-fill icon"></i>
+                            <input type="tel" name="tel" id="phone" placeholder="+57 312 694 7021" required>
+                        </div>
+                    
+                    
+                        <div class="container-inputs icon">
+                            <i class="ri-mail-fill icon"></i>
+                            <input type="email" name="mail" id="email" placeholder="Ingresa tu correo" required>
+                        </div>
+                        <div class="container-inputs icon">
+                            <i class="ri-key-fill"></i>
+                            <input type="password" name="password" id="pass" placeholder="Ingresa tu contraseña" required>
+                        </div>
+                    </div>
+                    
+                    <div >
+                        <input type="submit" value="Registrate" class="buttom">
+                        <div class="text">
+                            <p>Al registrate acepta todas nuestras <u>Condiciones de Uso y Politicas de Privacidad  </u></p>
+                            <p>¿Ya tienes una cuenta? <a href="#">Iniciar Sesion</a></p>
+                            <p>volver a <a href="#">Inicio</a></p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <!-- /*=============== SCROLL UP ===============*/ -->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-double-fill"></i>
+        </a>
+
+        <script src="assets/js/scrollreveal.min.js"></script>
+        <script src="assets/js/main.js"></script>
+</body>
+
+</html>
